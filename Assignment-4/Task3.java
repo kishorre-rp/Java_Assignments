@@ -8,9 +8,15 @@ public  class Task3 {
     	int num = sc.nextInt();
     	int temp = num;
     	int sum = 0;
+    	int count = 0;
+    	while (num !=0) {
+    		count ++;
+    		 num/=10;    		
+    	} 
+    	temp = num;
     	while(temp>0) {
     		int single= temp%10;
-    		sum += single*single*single; 
+    		sum += Math.pow(single, count); 
     	    temp/=10;
     		
     	}
@@ -22,3 +28,4 @@ public  class Task3 {
      	
     }
 }
+
