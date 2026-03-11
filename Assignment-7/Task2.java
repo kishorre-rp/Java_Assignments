@@ -12,7 +12,7 @@ public class Product {
 		this.quantity = rate;
 	}
 	void calculateTotalPrice(){
-		double result = price * quantity;
+		 result  = price * quantity;
 		
 	}
 
@@ -21,10 +21,14 @@ public class Product {
 		Product pr = new Product(1,"Shampoo", 200, 2);
 		pr.calculateTotalPrice();
 		
-		Product pr = new Product(2,"Soap", 100, 5);
-		pr.calculateTotalPrice();
+		System.out.println("The product ID: "+pr.productId+" of product "+pr.productName+" whose total price is " +pr.result);
 		
-
+		Product pr1 = new Product(2,"Soap", 100, 5);
+		pr1.calculateTotalPrice();
+		System.out.println("The product ID: "+pr1.productId+" of product "+pr1.productName+" whose total price is "+pr1.result);
+		
 	}
+
+}
 
 }
