@@ -18,7 +18,7 @@ public class Task4 {
 				max = b[i];
 				}
 		}
-		System.out.println("The maximum element in an array is: " +max);
+		System.out.println("The Largest element in an array is: " +max);
 		sc. close();
 	}
 }
