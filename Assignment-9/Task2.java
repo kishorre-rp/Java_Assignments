@@ -55,6 +55,7 @@ static class Truck implements vehicle{
 			t.startEngine();
 			t.stopEngine();
 		}
+                
 		
-	}
+	}sc.close();
 }
