@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Number_incresaing_prymaid {
+public class Number_incresaing_pyramaid {
 
 	public static void main(String[] args) {
 
