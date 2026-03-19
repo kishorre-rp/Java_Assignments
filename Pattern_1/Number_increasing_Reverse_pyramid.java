@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Number_incresaing_Reverse_prymaid {
+public class Number_incresaing_Reverse_pyramaid {
 
 	public static void main(String[] args) {
 
