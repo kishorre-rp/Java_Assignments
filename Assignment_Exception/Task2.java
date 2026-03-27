@@ -10,7 +10,8 @@ public class Task2 {
 			String name = sc.nextLine();
 			
 			if(name == "Kishorre") {
-				System.out.println();			}
+				System.out.println("Correct");	
+				}
 			
 		}catch(Exception e) { 
 			System.out.println(e.getMessage());
