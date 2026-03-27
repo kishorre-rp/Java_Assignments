@@ -15,6 +15,8 @@ public class Task2 {
 		}catch(Exception e) { 
 			System.out.println(e.getMessage());
 			
+		}finally {
+			System.out.println("The program is been terminated");
 		}
 	}
 }
