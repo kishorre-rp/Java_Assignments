@@ -12,7 +12,8 @@ public class Task2 {
 			if(name == "Kishorre") {
 				System.out.println();			}
 			
-		}catch(Exception e) {
+		}catch(Exception e) { 
+			System.out.println(e.getMessage());
 			
 		}
 	}
