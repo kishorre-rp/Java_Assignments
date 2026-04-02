@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Task1 {
 	
-	 satic class CompanySystem{
+	 static class CompanySystem{
 		int EmployeeID;
 		String EmployeeName;
 		
