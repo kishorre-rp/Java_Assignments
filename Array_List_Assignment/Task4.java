@@ -12,14 +12,15 @@ public class Task1 {
 		arr.add(60);
 		arr.add(80);
 		arr.add(100);
-		
+		int a ;
 		System.out.println(arr);
 		
 	for(int arrs : arr) {
-		if() {
+		arrs = a;
+		if(a > arr) {
+			
 			
 		}
-		
 	}
 	}
 }
