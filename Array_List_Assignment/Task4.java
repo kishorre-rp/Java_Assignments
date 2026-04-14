@@ -15,12 +15,15 @@ public class Task1 {
 		int a ;
 		System.out.println(arr);
 		
-	for(int arrs : arr) {
+	for(int  : arr) {
 		arrs = a;
-		if(a > arr) {
-			
-			
+		if(a[] > arr) {
+			System.out.println(arrs.get(3));
+			int temp = a;
 		}
+	}
+	for() {
+		
 	}
 	}
 }
