@@ -1,30 +1,51 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.*;
 
-public class Task3 {
-	public static String reverse(String str) {
+public class Task1 {
+	public static String findSmallest(String s, String t) {
+		String result = "";
 
-		if (str == null)
-			return null;
+		for (int i = 0; i < s.length(); i++) {
+			for (int j = i + 1; j <= s.length(); j++) {
+				String window = s.substring(i, j);
 
-		char[] chars = str.toCharArray();
-		int left = 0, right = chars.length - 1;
+				if (hasAllLetters(window, t)) {
 
-		while (left < right) {
-			char temp = chars[left];
-			chars[left] = chars[right];
-			chars[right] = temp;
-			left++;
-			right--;
+					if (result.equals("") || window.length() < result.length()) {
+						result = window;
+					}
+				}
+			}
 		}
-		return new String(chars);
+		return result;
+	}
+
+	public static boolean hasAllLetters(String window, String t) {
+		String copy = window;
+
+	
+		for (char need : t.toCharArray()) {
+			int pos = copy.indexOf(need);
+			if (pos == -1) {
+				return false; 
+			}
+			
+			copy = copy.substring(0, pos) + copy.substring(pos + 1);
+		}
+		return true;
 	}
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter the String to reverse: ");
-		String input = sc.nextLine();
-		System.out.println("Input: " + input);
-		System.out.println(" output is: reverse of given String; " + reverse(input));
 
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the string: ");
+		String s = sc.nextLine();
+		System.out.print("Enter the target: ");
+		String t = sc.nextLine();
+
+		System.out.println( "Output: "+ findSmallest(s, t));
 	}
 }
