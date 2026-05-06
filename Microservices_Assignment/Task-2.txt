@@ -1,0 +1,127 @@
+User.java file:
+
+public class User {
+    private int id;
+    private String name;
+
+    public User() {
+    }
+
+    public User(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+
+///////////////////////////////////////////////////////////
+UserController.java file: 
+
+
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/users")
+public class UserController {
+
+    @GetMapping("/{id}")
+    public User getUser(@PathVariable int id) {
+        return new User(id, "Kishorre");
+    }
+}
+
+///////////////////////////////////////////////////
+Order.java file:
+
+
+public class Order {
+    private int orderId;
+    private String productName;
+    private int userId;
+
+    public Order() {
+    }
+
+    public Order(int orderId, String productName, int userId) {
+        this.orderId = orderId;
+        this.productName = productName;
+        this.userId = userId;
+    }
+
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+}
+
+
+
+///////////////////////////////////////////////
+AppConfig.java file:
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
+
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+}
+
+/////////////////////////////////////////////
+OrderController.java file:
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/orders")
+public class OrderController {
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @GetMapping("/{id}")
+    public Map<String, Object> getOrder(@PathVariable int id) {
+        Order order = new Order(id, "Laptop", 1);
+
+        User user = restTemplate.getForObject(
+                "http://localhost:8081/users/" + order.getUserId(),
+                User.class
+        );
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("orderId", order.getOrderId());
+        response.put("productName", order.getProductName());
+        response.put("user", user);
+
+        return response;
+    }
+}
+
+
+
+
