@@ -1,0 +1,12 @@
+2) Send data one servlet to another:
+
+Answer: 
+
+You can send data from one servlet to another using RequestDispatcher, 
+sendRedirect with parameters, or HttpSession.
+RequestDispatcher.forward() keeps the same request object,
+so attributes set in the first servlet can be read in the second servlet.
+
+Method 1: RequestDispatcher
+
+Method 2: Session
