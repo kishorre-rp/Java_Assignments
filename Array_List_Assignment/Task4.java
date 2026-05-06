@@ -1,29 +1,42 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
-public class Task1 {
+public class Task4 {
+	public static int findSecondLargest(List<Integer> list) {
+		if (list.size() < 2)
+			return -1;
+
+		List<Integer> sorted = new ArrayList<>(list);
+		sorted.sort(Collections.reverseOrder());
+
+		int largest = sorted.get(0);
+		for (int i = 1; i < sorted.size(); i++) {
+			if (sorted.get(i) != largest) {
+				return sorted.get(i);
+			}
+		}
+		return -1;
+	}
 
 	public static void main(String[] args) {
-		
-		ArrayList<Integer> arr = new ArrayList<>();
-		
-		arr.add(20);
-		arr.add(40);
-		arr.add(60);
-		arr.add(80);
-		arr.add(100);
-		int a ;
-		System.out.println(arr);
-		
-	for(int  : arr) {
-		arrs = a;
-		if(a[] > arr) {
-			System.out.println(arrs.get(3));
-			int temp = a;
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("Enter array size: ");
+		int size = sc.nextInt();
+
+		List<Integer> list = new ArrayList<>();
+		System.out.println("Enter " + size + " elements:");
+		for (int i = 0; i < size; i++) {
+			list.add(sc.nextInt());
 		}
-	}
-	for() {
-		
-	}
+
+		System.out.println("Input: " + list);
+		int second = findSecondLargest(list);
+		if (second != -1) {
+			System.out.println("Second Largest: " + second);
+		} else {
+			System.out.println("No second largest element!");
+		}
+
 	}
 }
